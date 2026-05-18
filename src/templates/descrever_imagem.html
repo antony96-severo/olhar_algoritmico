@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Descrição</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="page-wrapper">
+        <section class="gradient-panel">
+            <div class="content-card">
+                <img src="{{ url_for('static', filename='img/olhar_algorítmico.png') }}"
+                     alt="Logo do projeto Olhar Algorítmico"
+                     class="logo">
+
+                <h1>Gerar descrição de imagem</h1>
+
+                <p>
+                    Preencha seus dados, permita o uso da câmera e clique no botão para gerar
+                    uma descrição da imagem com apoio de inteligência artificial.
+                </p>
+
+                <form id="form-descricao" class="form-box">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="raca">Raça/cor declarada</label>
+                        <select id="raca" name="raca" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="branca">Branca</option>
+                            <option value="preta">Preta</option>
+                            <option value="parda">Parda</option>
+                            <option value="indigena">Indígena</option>
+                            <option value="amarela">Amarela</option>
+                            <option value="prefiro_nao_informar">Prefiro não informar</option>
+                        </select>
+                    </div>
+
+                    <div class="camera-box">
+                        <video id="camera" autoplay playsinline></video>
+                        <canvas id="canvas" class="hidden"></canvas>
+                    </div>
+
+                    <button type="submit" id="botao-gerar" class="button-primary">
+                        Gerar descrição
+                    </button>
+                </form>
+
+                <p id="mensagem-erro" class="message-error hidden"></p>
+                <p id="mensagem-carregando" class="loading-text hidden">Gerando descrição, aguarde...</p>
+
+                <div id="resultado" class="result-box hidden">
+                    <h2>Resultado</h2>
+                    <p><strong>Nome:</strong> <span id="resultado-nome"></span></p>
+                    <p><strong>Raça/cor declarada:</strong> <span id="resultado-raca"></span></p>
+                    <h3>Descrição gerada pela IA</h3>
+                    <pre id="resultado-descricao"></pre>
+                </div>
+
+                <div class="actions">
+                    <a class="button-secondary" href="{{ url_for('home') }}">
+                        Página inicial
+                    </a>
+                    <a class="button-secondary" href="{{ url_for('historico') }}">
+                        Ver histórico
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/camera.js') }}"></script>
+</body>
+</html>

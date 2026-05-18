@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olhar Algorítmico</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <main class="page-wrapper">
+
+        <section class="gradient-panel">
+
+            <div class="content-card">
+
+                <img src="{{ url_for('static', filename='img/olhar_algorítmico.png') }}"
+                     alt="Logo do projeto Olhar Algorítmico"
+                     class="logo">
+
+                <h1>Olhar Algorítmico</h1>
+
+                <p>
+                    O projeto <strong>Olhar Algorítmico</strong> foi desenvolvido
+                    para a turma do <strong>7º Ano A</strong> da
+                    Escola de Tempo Integral Pastor Florêncio Nunes Neto,
+                    como parte de uma proposta voltada para tecnologia,
+                    inteligência artificial e reflexão social.
+                </p>
+
+                <p>
+                    A aplicação utiliza inteligência artificial e visão computacional
+                    para gerar descrições automáticas a partir da imagem capturada
+                    pela câmera do usuário, permitindo discutir como sistemas
+                    algorítmicos interpretam rostos, características físicas
+                    e identidades.
+                </p>
+
+                <p>
+                    O principal objetivo do projeto é analisar os impactos dessas
+                    descrições na <strong>autoestima</strong> e na
+                    <strong>autoidentidade</strong> dos alunos,
+                    promovendo reflexões sobre reconhecimento,
+                    representatividade, vieses algorítmicos
+                    e os efeitos sociais da inteligência artificial.
+                </p>
+
+                <p>
+                    O projeto também busca incentivar debates sobre ética na tecnologia,
+                    racismo algorítmico, identidade digital e responsabilidade social
+                    no desenvolvimento de sistemas inteligentes.
+                </p>
+
+                <p>
+                    A câmera é aberta diretamente no navegador do usuário.
+                    A imagem capturada é enviada ao servidor apenas quando
+                    o botão de gerar descrição é acionado.
+                </p>
+
+                <div class="actions">
+
+                    <a class="button-primary"
+                       href="{{ url_for('descrever_imagem') }}">
+                        Gerar descrição
+                    </a>
+
+                    <a class="button-secondary"
+                       href="{{ url_for('historico') }}">
+                        Ver histórico
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
